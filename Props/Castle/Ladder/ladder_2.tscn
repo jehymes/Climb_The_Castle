@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfythd4tsykro"]
+
+[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/tile_model.tscn" id="1_0ts52"]
+[ext_resource type="Script" path="res://Scripts/Castle/ladder.gd" id="2_ei7kx"]
+[ext_resource type="Texture2D" uid="uid://bg6njw1ppn052" path="res://Assets/Tiles/Castle.png" id="3_vigvq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3gk3"]
+texture = ExtResource("3_vigvq")
+4:0/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hpqrd"]
+sources/0 = SubResource("TileSetAtlasSource_v3gk3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n35na"]
+size = Vector2(2, 34)
+
+[node name="Ladder_2" instance=ExtResource("1_0ts52")]
+script = ExtResource("2_ei7kx")
+
+[node name="Tile" parent="." index="0"]
+tile_set = SubResource("TileSet_hpqrd")
+layer_0/tile_data = PackedInt32Array(-196608, 262144, 1, -262144, 262144, 1, -327680, 262144, 0, -131072, 262144, 2)
+
+[node name="Exit" parent="." index="1"]
+position = Vector2(144, -64)
+rotation = 0.785398
+gizmo_extents = 15.0
+
+[node name="Collision" parent="Area_1" index="0"]
+position = Vector2(4, -47)
+shape = SubResource("RectangleShape2D_n35na")
+
+[node name="Area_2" parent="." index="3"]
+visible = false
+
+[connection signal="body_entered" from="Area_1" to="." method="on_area_body_entered"]
+[connection signal="body_exited" from="Area_1" to="." method="on_area_body_exited"]

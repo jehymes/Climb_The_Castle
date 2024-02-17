@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cckbkf61jhula"]
+
+[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/tile_model.tscn" id="1_jln8y"]
+[ext_resource type="Texture2D" uid="uid://bg6njw1ppn052" path="res://Assets/Tiles/Castle.png" id="2_sem5g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7hkl"]
+texture = ExtResource("2_sem5g")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w5cxy"]
+sources/0 = SubResource("TileSetAtlasSource_w7hkl")
+
+[node name="Top" instance=ExtResource("1_jln8y")]
+
+[node name="Tile" parent="." index="0"]
+tile_set = SubResource("TileSet_w5cxy")
+layer_0/tile_data = PackedInt32Array(-65536, 0, 3, -65526, 262144, 3, -65535, 65536, 3, -65527, 196608, 3, -65533, 65536, 3, -65529, 196608, 3, -65534, 131072, 3, -65528, 131072, 3, -65532, 131072, 3, -65530, 131072, 3, -65531, 131072, 3)
+
+[node name="Area_1" parent="." index="2"]
+visible = false
+
+[node name="Area_2" parent="." index="3"]
+visible = false

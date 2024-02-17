@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://qnr3euc7jb63"]
+
+[ext_resource type="PackedScene" uid="uid://8lxth0nq6o8v" path="res://Props/Castle/Bricks/bricks.tscn" id="1_35xof"]
+[ext_resource type="PackedScene" uid="uid://rq72cn7rlxc" path="res://Props/Castle/Collumns/collumns.tscn" id="2_any4q"]
+[ext_resource type="PackedScene" uid="uid://nbs1qixkmloa" path="res://Props/Castle/Ground/ground_1.tscn" id="3_plwgs"]
+[ext_resource type="PackedScene" uid="uid://ioqiqfp075sh" path="res://Props/Castle/Ladder/ladder_1.tscn" id="4_eogje"]
+[ext_resource type="PackedScene" uid="uid://cyh8upleunc8x" path="res://Props/Castle/Door/door.tscn" id="5_orsqb"]
+[ext_resource type="PackedScene" uid="uid://3t455e376lxe" path="res://Props/Stats/stats.tscn" id="6_cest1"]
+[ext_resource type="PackedScene" uid="uid://4fhqqpm3ypij" path="res://Props/Others/background.tscn" id="7_3lo2t"]
+
+[node name="Model" type="Node2D"]
+position = Vector2(24, 256)
+
+[node name="Background" parent="." instance=ExtResource("7_3lo2t")]
+
+[node name="Bricks" parent="." instance=ExtResource("1_35xof")]
+position = Vector2(0, -32)
+
+[node name="Collumns1" parent="." instance=ExtResource("2_any4q")]
+position = Vector2(0, -32)
+
+[node name="Collumns2" parent="." instance=ExtResource("2_any4q")]
+position = Vector2(0, -48)
+
+[node name="Collumns3" parent="." instance=ExtResource("2_any4q")]
+position = Vector2(0, -64)
+
+[node name="Collumns4" parent="." instance=ExtResource("2_any4q")]
+position = Vector2(0, -80)
+
+[node name="Ground" parent="." instance=ExtResource("3_plwgs")]
+position = Vector2(16, -80)
+
+[node name="Ladder" parent="." instance=ExtResource("4_eogje")]
+position = Vector2(16, -32)
+
+[node name="Door" parent="." instance=ExtResource("5_orsqb")]
+position = Vector2(120, -33)
+
+[node name="Stats" parent="." instance=ExtResource("6_cest1")]
+position = Vector2(-24, 0)

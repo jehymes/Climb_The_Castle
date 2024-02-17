@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://4fhqqpm3ypij"]
+
+[ext_resource type="Shader" path="res://Scripts/Others/Background.gdshader" id="1_vwpsp"]
+[ext_resource type="Texture2D" uid="uid://bycq0vxiskge6" path="res://Assets/Others/Background.png" id="2_1jmxr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hvnlg"]
+shader = ExtResource("1_vwpsp")
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="Layer" type="ParallaxLayer" parent="."]
+position = Vector2(0, -256)
+motion_mirroring = Vector2(0, 256)
+
+[node name="TextureRect" type="TextureRect" parent="Layer"]
+material = SubResource("ShaderMaterial_hvnlg")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_1jmxr")
+stretch_mode = 1

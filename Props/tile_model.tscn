@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dg4fuq7cqf3xt"]
+
+[node name="TileModel" type="Node2D"]
+
+[node name="Tile" type="TileMap" parent="."]
+format = 2
+
+[node name="Exit" type="Marker2D" parent="."]
+
+[node name="Area_1" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area_1"]
+
+[node name="Area_2" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area_2"]
