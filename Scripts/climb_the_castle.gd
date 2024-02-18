@@ -4,7 +4,7 @@ extends Node2D
 var background = preload("res://Props/Others/background.tscn").instantiate()
 var grass_stats = preload("res://Props/Stats/stats.tscn").instantiate()
 var door = preload("res://Props/Castle/Door/door.tscn").instantiate()
-var collumns = preload("res://Props/Castle/Collumns/collumns.tscn").instantiate()
+var collumns = preload("res://Props/Castle/Collumns/collumns_1.tscn").instantiate()
 var bricks = preload("res://Props/Castle/Bricks/bricks.tscn").instantiate()
 var ground = preload("res://Props/Castle/Ground/ground_1.tscn").instantiate()
 var ladder = preload("res://Props/Castle/Ladder/ladder_1.tscn").instantiate()

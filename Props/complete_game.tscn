@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6dhol2ygjf1x"]
+
+[ext_resource type="Texture2D" uid="uid://rk5onid44cqf" path="res://Assets/Collectibles/Complete_Game.png" id="1_5isax"]
+[ext_resource type="Script" path="res://Scripts/complete_game.gd" id="1_gfuwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxd7r"]
+size = Vector2(3, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqw6q"]
+size = Vector2(4, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nakn8"]
+size = Vector2(8, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udb28"]
+size = Vector2(10, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvxd7"]
+size = Vector2(12, 2)
+
+[node name="Complete_Game" type="Node2D"]
+script = ExtResource("1_gfuwq")
+
+[node name="CompleteGame" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_5isax")
+
+[node name="Area2D" type="Area2D" parent="CompleteGame"]
+
+[node name="Collision1" type="CollisionShape2D" parent="CompleteGame/Area2D"]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_yxd7r")
+
+[node name="Collision2" type="CollisionShape2D" parent="CompleteGame/Area2D"]
+position = Vector2(1, 3.5)
+shape = SubResource("RectangleShape2D_yqw6q")
+
+[node name="Collision3" type="CollisionShape2D" parent="CompleteGame/Area2D"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_nakn8")
+
+[node name="Collision4" type="CollisionShape2D" parent="CompleteGame/Area2D"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_udb28")
+
+[node name="Collision5" type="CollisionShape2D" parent="CompleteGame/Area2D"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_xvxd7")
+
+[connection signal="body_entered" from="CompleteGame/Area2D" to="." method="on_area_2d_body_entered"]

@@ -7,7 +7,7 @@ var block_level_height = 96
 var t_generate = 0.0
 
 # Total Levels
-var total_levels = 10
+var total_levels = 4
 
 #Total Generate Collumns
 var blocks_collumn_for_level = 4
@@ -25,10 +25,13 @@ var total_ground = total_levels
 
 #Player Globals
 var GRAVITY: float = 200
-var movement_speed: float = -0.5
+var movement_speed: float = -0.7
 var jump_force: float = 70.0
 var climb_ladder: float = 40
 var on_ladder: bool = false
+
+#Dragon
+var pos_drag = 0
 
 func StackTrace(text: String, args: Array) -> void:
 	var trace = text

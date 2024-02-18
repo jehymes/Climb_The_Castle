@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://qnr3euc7jb63"]
 
 [ext_resource type="PackedScene" uid="uid://8lxth0nq6o8v" path="res://Props/Castle/Bricks/bricks.tscn" id="1_35xof"]
-[ext_resource type="PackedScene" uid="uid://rq72cn7rlxc" path="res://Props/Castle/Collumns/collumns.tscn" id="2_any4q"]
+[ext_resource type="PackedScene" uid="uid://rq72cn7rlxc" path="res://Props/Castle/Collumns/collumns_1.tscn" id="2_any4q"]
 [ext_resource type="PackedScene" uid="uid://nbs1qixkmloa" path="res://Props/Castle/Ground/ground_1.tscn" id="3_plwgs"]
 [ext_resource type="PackedScene" uid="uid://ioqiqfp075sh" path="res://Props/Castle/Ladder/ladder_1.tscn" id="4_eogje"]
 [ext_resource type="PackedScene" uid="uid://cyh8upleunc8x" path="res://Props/Castle/Door/door.tscn" id="5_orsqb"]
