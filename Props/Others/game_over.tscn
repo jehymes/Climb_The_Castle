@@ -1,0 +1,152 @@
+[gd_scene load_steps=13 format=3 uid="uid://djutoeoxno2td"]
+
+[ext_resource type="Texture2D" uid="uid://b6ed8cn4dp6ef" path="res://Assets/Others/Game Over.png" id="1_35xt6"]
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_swfql"]
+[ext_resource type="Texture2D" uid="uid://bef0gqevc513" path="res://Assets/Others/Btn_Restart_Normal.png" id="2_cjqgh"]
+[ext_resource type="Texture2D" uid="uid://b4p6b1u2gjplo" path="res://Assets/Others/Btn_Restart_Pressed.png" id="3_q2p2b"]
+[ext_resource type="Texture2D" uid="uid://bl35y1nkbpwai" path="res://Assets/Others/Btn_Restart_Hover.png" id="4_2opab"]
+[ext_resource type="Texture2D" uid="uid://b6fvk5o822g2" path="res://Assets/Others/Btn_Quit_Normal.png" id="5_d8rfn"]
+[ext_resource type="Texture2D" uid="uid://ckpi1st6yu2sb" path="res://Assets/Others/Btn_Quit_Pressed.png" id="6_wy3u7"]
+[ext_resource type="Texture2D" uid="uid://cvmwwxcn7d54w" path="res://Assets/Others/Btn_Quit_Hover.png" id="7_8ewlc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ns1hy"]
+
+[sub_resource type="Animation" id="Animation_fuvri"]
+resource_name = "Fade_In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOver_Title:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xnrtc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameOver_Title:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1o5n"]
+_data = {
+"Fade_In": SubResource("Animation_fuvri"),
+"RESET": SubResource("Animation_xnrtc")
+}
+
+[node name="GameOver" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_swfql")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 224.0
+offset_bottom = 256.0
+color = Color(0, 0, 0, 1)
+
+[node name="GameOver_Title" type="TextureRect" parent="."]
+offset_left = 32.0
+offset_top = 56.0
+offset_right = 208.0
+offset_bottom = 88.0
+texture = ExtResource("1_35xt6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = 136.0
+offset_right = 169.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Restart_Btn" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_cjqgh")
+texture_pressed = ExtResource("3_q2p2b")
+texture_hover = ExtResource("4_2opab")
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ns1hy")
+
+[node name="Quit_Btn" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_d8rfn")
+texture_pressed = ExtResource("6_wy3u7")
+texture_hover = ExtResource("7_8ewlc")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k1o5n")
+}
+autoplay = "Fade_In"
+
+[connection signal="pressed" from="VBoxContainer/Restart_Btn" to="." method="on_restart_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit_Btn" to="." method="on_quit_btn_pressed"]

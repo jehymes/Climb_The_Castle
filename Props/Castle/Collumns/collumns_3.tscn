@@ -43,7 +43,8 @@ size = Vector2(1, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21683"]
 size = Vector2(1, 16)
 
-[node name="Collumns" instance=ExtResource("1_arivh")]
+[node name="Collumns" groups=["collumns"] instance=ExtResource("1_arivh")]
+z_index = -1
 script = ExtResource("2_s7sfc")
 
 [node name="Tile" parent="." index="0"]
@@ -61,28 +62,34 @@ scale = Vector2(-1, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
 collision_layer = 2
+collision_mask = 17
 
 [node name="Coll_1" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 position = Vector2(7.5, -8)
 shape = SubResource("RectangleShape2D_o0vq5")
 
 [node name="Coll_2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+visible = false
 position = Vector2(168.5, -8)
 shape = SubResource("RectangleShape2D_uufuy")
 
 [node name="Area_1" parent="." index="4"]
 collision_layer = 2
+collision_mask = 17
 
 [node name="Collision" parent="Area_1" index="0"]
 position = Vector2(15.5, -8)
 shape = SubResource("RectangleShape2D_5n4pk")
 
 [node name="Area_2" parent="." index="5"]
+visible = false
 collision_layer = 2
+collision_mask = 17
 
 [node name="Collision" parent="Area_2" index="0"]
 position = Vector2(160.5, -8)
 shape = SubResource("RectangleShape2D_21683")
 
+[connection signal="area_entered" from="Area_1" to="." method="on_area_entered"]
 [connection signal="body_entered" from="Area_1" to="." method="on_area_body_entered"]
 [connection signal="body_entered" from="Area_2" to="." method="on_area_body_entered"]

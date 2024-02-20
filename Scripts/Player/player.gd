@@ -45,3 +45,12 @@ func invert_position_movement() -> void:
 	
 	g.movement_speed = g.movement_speed * -1
 	return
+
+
+func on_hit_box_area_entered(area):
+	if area.is_in_group("shoot"):
+		self.queue_free()
+		area.queue_free()
+		g.on_shoot = false
+		g.restart_variables()
+		g.game_over()

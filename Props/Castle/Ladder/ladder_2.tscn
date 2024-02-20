@@ -28,6 +28,9 @@ position = Vector2(144, -64)
 rotation = 0.785398
 gizmo_extents = 15.0
 
+[node name="Area_1" parent="." index="2"]
+collision_layer = 2
+
 [node name="Collision" parent="Area_1" index="0"]
 position = Vector2(4, -47)
 shape = SubResource("RectangleShape2D_n35na")

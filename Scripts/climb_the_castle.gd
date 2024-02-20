@@ -14,11 +14,11 @@ func _ready() -> void:
 	#Background
 	add_child(background)
 	
-	#Collumns
-	set_position_obj(collumns, $Start_Collumns.position)
-	
 	#Bricks
 	set_position_obj(bricks, $Start_Bricks.position)
+	
+	#Collumns
+	set_position_obj(collumns, $Start_Collumns.position)
 	
 	#Ground
 	set_position_obj(ground, $Start_Ground.position)

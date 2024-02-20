@@ -10,6 +10,7 @@ size = Vector2(16, 2)
 size = Vector2(16, 14)
 
 [node name="Caxote" type="Node2D"]
+z_index = -1
 script = ExtResource("1_px16t")
 
 [node name="Caixote" type="Sprite2D" parent="."]
@@ -24,6 +25,7 @@ position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_rq0bs")
 
 [node name="Area2D" type="Area2D" parent="Caixote"]
+collision_layer = 2
 
 [node name="Collision" type="CollisionShape2D" parent="Caixote/Area2D"]
 position = Vector2(0, 1)

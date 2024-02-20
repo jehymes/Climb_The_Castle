@@ -190,12 +190,14 @@ autoplay = "Sleep"
 speed_scale = 0.3
 
 [node name="WakeUp" type="Area2D" parent="."]
+collision_layer = 10
 
 [node name="Collision" type="CollisionShape2D" parent="WakeUp"]
 position = Vector2(84, 4.5)
 shape = SubResource("RectangleShape2D_tg8qb")
 
 [node name="Sleep" type="Area2D" parent="."]
+collision_layer = 8
 
 [node name="Collision" type="CollisionShape2D" parent="Sleep"]
 position = Vector2(83, -60)

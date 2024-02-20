@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btjxyuxtje58b"]
+[gd_scene load_steps=10 format=3 uid="uid://btjxyuxtje58b"]
 
 [ext_resource type="PackedScene" uid="uid://dlr725sgsmmnb" path="res://Props/player_model.tscn" id="1_fqgri"]
 [ext_resource type="Texture2D" uid="uid://dnh7mb0ntv4g5" path="res://Assets/Players/Anny_Run.png" id="2_c1aau"]
@@ -6,6 +6,59 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol72t"]
 size = Vector2(9, 10)
+
+[sub_resource type="Animation" id="Animation_iyqy8"]
+resource_name = "Climb"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_okl3e")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Animation:speed_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.3]
+}
 
 [sub_resource type="Animation" id="Animation_8ybdv"]
 length = 0.001
@@ -111,59 +164,6 @@ tracks/3/keys = {
 "values": [0.3]
 }
 
-[sub_resource type="Animation" id="Animation_iyqy8"]
-resource_name = "Climb"
-length = 0.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_okl3e")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Sprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Animation:speed_scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.3]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7npwu"]
 _data = {
 "Climb": SubResource("Animation_iyqy8"),
@@ -171,8 +171,12 @@ _data = {
 "Walk": SubResource("Animation_fd16b")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2qhp"]
+size = Vector2(9, 10)
+
 [node name="Anny" instance=ExtResource("1_fqgri")]
-collision_mask = 14
+z_index = 1
+collision_mask = 30
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2(0, -8.50143)
@@ -195,3 +199,12 @@ limit_left = 0
 limit_right = 224
 limit_bottom = 256
 position_smoothing_speed = 3.0
+
+[node name="HitBox" type="Area2D" parent="." index="4"]
+collision_mask = 16
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(-0.5, -5)
+shape = SubResource("RectangleShape2D_e2qhp")
+
+[connection signal="area_entered" from="HitBox" to="." method="on_hit_box_area_entered"]

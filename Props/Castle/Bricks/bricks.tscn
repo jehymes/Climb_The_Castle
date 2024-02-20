@@ -78,9 +78,11 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5byc4")
 
 [node name="Bricks" instance=ExtResource("1_ra8bo")]
+z_index = -2
 script = ExtResource("2_itrng")
 
 [node name="Tile" parent="." index="0"]
+z_index = -2
 tile_set = SubResource("TileSet_4p1hq")
 layer_0/tile_data = PackedInt32Array(-65536, 0, 2, -65535, 65536, 2, -65534, 65536, 2, -65533, 65536, 2, -65532, 65536, 2, -65531, 65536, 2, -65530, 65536, 2, -131071, 65536, 1, -131070, 65536, 1, -131069, 65536, 1, -131068, 65536, 1, -131067, 65536, 1, -131066, 65536, 1, -196607, 65536, 0, -196606, 65536, 0, -196605, 65536, 0, -196604, 65536, 0, -196603, 65536, 0, -196602, 65536, 0, -196608, 0, 0, -131072, 0, 1, -196601, 65536, 0, -131065, 65536, 1, -65529, 65536, 2, -196600, 131072, 0, -131064, 131072, 1, -65528, 131072, 2)
 
@@ -91,6 +93,8 @@ gizmo_extents = 15.0
 
 [node name="Area_1" parent="." index="2"]
 visible = false
+collision_layer = 0
+collision_mask = 0
 
 [node name="Area_2" parent="." index="3"]
 visible = false

@@ -8,5 +8,6 @@ func generate_block_bricks() -> void:
 	if g.total_bricks > 1:
 		var new_brick = load("res://Props/Castle/Bricks/bricks.tscn").instantiate()
 		new_brick.position = $Exit.position
+		new_brick.z_index = -2
 		add_child(new_brick)
 		g.total_bricks += -1
