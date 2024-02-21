@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://3t455e376lxe"]
+[gd_scene load_steps=9 format=3 uid="uid://3t455e376lxe"]
 
-[ext_resource type="Texture2D" uid="uid://da32na3hdaiiw" path="res://Assets/Tiles/Stats.png" id="1_rklb1"]
+[ext_resource type="Texture2D" uid="uid://cwf5m5oa8eqxf" path="res://Assets/Tiles/Stats.png" id="1_rklb1"]
+[ext_resource type="Script" path="res://Scripts/Others/stats.gd" id="1_wwkpc"]
 [ext_resource type="PackedScene" uid="uid://djp54310tnakl" path="res://Props/Others/cat.tscn" id="2_pw1gh"]
+[ext_resource type="FontFile" uid="uid://bkh5ubgye6wiq" path="res://Fonts/MINECRAFT.TTF" id="3_6gkqw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3q6s"]
 texture = ExtResource("1_rklb1")
@@ -120,7 +122,17 @@ texture = ExtResource("1_rklb1")
 physics_layer_0/collision_layer = 2
 sources/1 = SubResource("TileSetAtlasSource_b3q6s")
 
+[sub_resource type="LabelSettings" id="LabelSettings_h30ul"]
+font = ExtResource("3_6gkqw")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m5fbl"]
+line_spacing = 2.0
+font = ExtResource("3_6gkqw")
+font_color = Color(0, 0, 0, 1)
+
 [node name="Stats" type="Node2D"]
+script = ExtResource("1_wwkpc")
 
 [node name="Tile_Base" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ndgkw")
@@ -129,3 +141,21 @@ layer_0/tile_data = PackedInt32Array(-196608, 1, 0, -131072, 1, 1, -65536, 1, 2,
 
 [node name="Cat" parent="." instance=ExtResource("2_pw1gh")]
 position = Vector2(212, -32)
+
+[node name="Score" type="Label" parent="."]
+offset_left = 11.0
+offset_top = -37.0
+offset_right = 32.0
+offset_bottom = -21.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "00
+"
+label_settings = SubResource("LabelSettings_h30ul")
+
+[node name="Deaths" type="Label" parent="."]
+offset_left = 133.0
+offset_top = -27.0
+offset_right = 151.0
+offset_bottom = -11.0
+text = "00"
+label_settings = SubResource("LabelSettings_m5fbl")

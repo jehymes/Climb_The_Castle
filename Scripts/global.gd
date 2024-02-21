@@ -1,5 +1,11 @@
 extends Node
 
+#Game Variables
+var SCORE: int = 0
+var DEATHS: int = 0
+var score_in_game: int = 0
+var level: int = 0
+
 # Timer Generate Blocks
 var t_generate = 0.0
 
@@ -41,6 +47,9 @@ func game_over() -> void:
 	get_tree().change_scene_to_file("res://Props/Others/game_over.tscn")
 
 func restart_variables() -> void:
+	#Game Variables
+	score_in_game = 0
+	level = 0
 	#Total Generate Collumns
 	total_collumns = total_levels * blocks_collumn_for_level
 	#Total Generate Bricks

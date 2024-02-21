@@ -9,8 +9,12 @@ var bricks = preload("res://Props/Castle/Bricks/bricks.tscn").instantiate()
 var ground = preload("res://Props/Castle/Ground/ground_1.tscn").instantiate()
 var ladder = preload("res://Props/Castle/Ladder/ladder_1.tscn").instantiate()
 var player = preload("res://Props/Player/anny.tscn").instantiate()
+var hud = preload("res://Props/hud.tscn").instantiate()
 
 func _ready() -> void:
+	#HUD
+	add_child(hud)
+	
 	#Background
 	add_child(background)
 	
@@ -34,9 +38,11 @@ func _ready() -> void:
 	
 	#Player
 	set_position_obj(player, $Start_Player.position)
+	
+	g.restart_variables()
 
 func _physics_process(_delta) -> void:
-	pass
+	check_point()
 
 func set_position_obj(obj: Node2D, pos: Vector2) -> void:
 	if pos != null:
@@ -44,3 +50,7 @@ func set_position_obj(obj: Node2D, pos: Vector2) -> void:
 		add_child(obj)
 	else:
 		add_child(obj)
+
+func check_point() -> void:
+	if g.score_in_game > g.SCORE:
+		g.SCORE = g.score_in_game

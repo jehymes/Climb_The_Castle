@@ -118,6 +118,7 @@ radius = 3.0
 
 [node name="Boll_Attack" type="Area2D" groups=["shoot"]]
 z_index = 1
+z_as_relative = false
 collision_layer = 16
 collision_mask = 3
 script = ExtResource("1_r37k4")

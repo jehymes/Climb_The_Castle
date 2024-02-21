@@ -20,10 +20,7 @@ func generate_block_collumns() -> void:
 		else:
 			id = 1
 		
-		var total_blocks = g.total_collumns - g.blocks_collumn_for_level
-		print(g.total_collumns)
 		if id != 1 && (g.pos_drag == 3) && (g.total_collumns != 5):
-			print("Colocou")
 			var new_collumn = load("res://Props/Castle/Collumns/collumns_"+str(id)+".tscn").instantiate()
 			new_collumn.position = $Exit.position
 			add_child(new_collumn)
@@ -53,6 +50,5 @@ func on_area_body_entered(body):
 
 func on_area_entered(area):
 	if area.is_in_group("shoot"):
-		print("Colidiu com parede")
 		area.queue_free()
 		g.on_shoot = false

@@ -23,5 +23,7 @@ func on_area_body_entered(body):
 func on_area_body_exited(body):
 	if body.is_in_group("player"):
 		if g.on_ladder == true:
+			g.score_in_game += 1
+			g.level += 1
 			g.on_ladder = false
 			body.invert_position_movement()

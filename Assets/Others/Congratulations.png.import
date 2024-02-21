@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwf5m5oa8eqxf"
-path="res://.godot/imported/Stats.png-f0497d8a200e3e4920bbaaf3edb6d825.ctex"
+uid="uid://crgouf6fg4kew"
+path="res://.godot/imported/Congratulations.png-d9c06e0a2e096a39b893b7672b9958f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/Stats.png"
-dest_files=["res://.godot/imported/Stats.png-f0497d8a200e3e4920bbaaf3edb6d825.ctex"]
+source_file="res://Assets/Others/Congratulations.png"
+dest_files=["res://.godot/imported/Congratulations.png-d9c06e0a2e096a39b893b7672b9958f2.ctex"]
 
 [params]
 

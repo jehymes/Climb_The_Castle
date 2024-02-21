@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkac5bghotiml"]
+
+[ext_resource type="Script" path="res://Scripts/Others/hud.gd" id="1_rk84o"]
+[ext_resource type="FontFile" uid="uid://bkh5ubgye6wiq" path="res://Fonts/MINECRAFT.TTF" id="1_w0i2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s56ll"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q4def"]
+font = ExtResource("1_w0i2b")
+
+[sub_resource type="LabelSettings" id="LabelSettings_up8p4"]
+font = ExtResource("1_w0i2b")
+
+[node name="Hud" type="ParallaxBackground"]
+layer = 1
+script = ExtResource("1_rk84o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+top_level = true
+offset_right = 224.0
+offset_bottom = 22.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+top_level = true
+offset_right = 224.0
+offset_bottom = 25.0
+
+[node name="HSeparator1" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s56ll")
+
+[node name="Level" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Level: "
+label_settings = SubResource("LabelSettings_q4def")
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s56ll")
+
+[node name="Score" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Score: "
+label_settings = SubResource("LabelSettings_up8p4")

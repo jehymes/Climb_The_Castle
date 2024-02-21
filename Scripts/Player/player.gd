@@ -18,7 +18,6 @@ func gravity(delta: float) -> void:
 func move_player() -> void:
 	if !g.on_ladder:
 		animation.play("Walk")
-		#velocity.x += Global.movement_speed
 		move_and_collide(Vector2(g.movement_speed, 0))
 	
 		if is_on_floor():		
@@ -46,11 +45,11 @@ func invert_position_movement() -> void:
 	g.movement_speed = g.movement_speed * -1
 	return
 
-
 func on_hit_box_area_entered(area):
 	if area.is_in_group("shoot"):
 		self.queue_free()
 		area.queue_free()
 		g.on_shoot = false
 		g.restart_variables()
+		g.DEATHS += 1
 		g.game_over()
