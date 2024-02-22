@@ -2,12 +2,14 @@ extends CharacterBody2D
 
 @onready var sprite: Sprite2D = get_node("Sprite")
 @onready var animation: AnimationPlayer = get_node("Animation")
+var is_dead: bool = false
 
 var jump_count: int = 0
 
 func _physics_process(delta):
-	move_player()
-	gravity(delta)
+	if !is_dead:
+		move_player()
+		gravity(delta)
 
 func gravity(delta: float) -> void:
 	if g.on_ladder:
@@ -45,10 +47,21 @@ func invert_position_movement() -> void:
 	g.movement_speed = g.movement_speed * -1
 	return
 
-func on_hit_box_area_entered(area):
+func on_hit_box_area_entered(area):	
+	animation.stop(true)
 	if area.is_in_group("shoot"):
-		self.queue_free()
+		is_dead = true
+		velocity = Vector2.ZERO
+		animation.play("Death")
 		area.queue_free()
+	
+	if area.is_in_group("spikes"):
+		is_dead = true
+		velocity = Vector2.ZERO
+		animation.play("Death")
+
+func on_animation_animation_finished(anim_name):	
+	if anim_name == "Death":
 		g.on_shoot = false
 		g.restart_variables()
 		g.DEATHS += 1

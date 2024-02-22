@@ -1,6 +1,7 @@
 extends Node2D
 
 var final_game = load("res://Props/complete_game.tscn").instantiate()
+var total_grounds = 9
 
 func _ready() -> void:
 	await get_tree().create_timer(g.t_generate).timeout
@@ -8,7 +9,7 @@ func _ready() -> void:
 
 func generate_ground() -> void:
 	randomize()
-	var id = randi_range(1,3)
+	var id = randi_range(1,total_grounds)
 	var final_block = g.total_ground - 1
 	var complete_game_block = g.total_ground - 2
 	

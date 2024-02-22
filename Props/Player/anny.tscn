@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://btjxyuxtje58b"]
+[gd_scene load_steps=12 format=3 uid="uid://btjxyuxtje58b"]
 
 [ext_resource type="PackedScene" uid="uid://dlr725sgsmmnb" path="res://Props/player_model.tscn" id="1_fqgri"]
 [ext_resource type="Texture2D" uid="uid://dnh7mb0ntv4g5" path="res://Assets/Players/Anny_Run.png" id="2_c1aau"]
 [ext_resource type="Texture2D" uid="uid://rym6btfkal8i" path="res://Assets/Players/Anny_Climb.png" id="3_okl3e"]
+[ext_resource type="Texture2D" uid="uid://dp7lofu8t7eeb" path="res://Assets/Players/Anny_Death.png" id="4_b1gfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol72t"]
 size = Vector2(9, 10)
@@ -164,9 +165,62 @@ tracks/3/keys = {
 "values": [0.3]
 }
 
+[sub_resource type="Animation" id="Animation_0m1kc"]
+resource_name = "Death"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_b1gfh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Animation:speed_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7npwu"]
 _data = {
 "Climb": SubResource("Animation_iyqy8"),
+"Death": SubResource("Animation_0m1kc"),
 "RESET": SubResource("Animation_8ybdv"),
 "Walk": SubResource("Animation_fd16b")
 }
@@ -191,7 +245,7 @@ shape = SubResource("RectangleShape2D_ol72t")
 libraries = {
 "": SubResource("AnimationLibrary_7npwu")
 }
-autoplay = "Walk"
+autoplay = "Death"
 speed_scale = 0.3
 
 [node name="Camera" parent="." index="3"]
@@ -201,10 +255,11 @@ limit_bottom = 256
 position_smoothing_speed = 3.0
 
 [node name="HitBox" type="Area2D" parent="." index="4"]
-collision_mask = 16
+collision_mask = 24
 
 [node name="Collision" type="CollisionShape2D" parent="HitBox" index="0"]
 position = Vector2(-0.5, -5)
 shape = SubResource("RectangleShape2D_e2qhp")
 
+[connection signal="animation_finished" from="Animation" to="." method="on_animation_animation_finished"]
 [connection signal="area_entered" from="HitBox" to="." method="on_hit_box_area_entered"]

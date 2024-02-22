@@ -10,7 +10,7 @@ var level: int = 0
 var t_generate = 0.0
 
 # Total Levels
-var total_levels = 10
+var total_levels = 101
 
 #Total Generate Collumns
 var blocks_collumn_for_level = 4

@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://2hs2kpmu3vy6"]
+[gd_scene load_steps=9 format=3 uid="uid://n5pwbwdolf4x"]
 
-[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/tile_model.tscn" id="1_qodya"]
-[ext_resource type="Script" path="res://Scripts/Castle/ground.gd" id="2_rpxfn"]
-[ext_resource type="Texture2D" uid="uid://bg6njw1ppn052" path="res://Assets/Tiles/Castle.png" id="3_gw6iu"]
-[ext_resource type="PackedScene" uid="uid://ihyybdk0m338" path="res://Props/Enemies/spike.tscn" id="4_7hwln"]
+[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/tile_model.tscn" id="1_2i4hh"]
+[ext_resource type="Script" path="res://Scripts/Castle/ground.gd" id="2_ilaip"]
+[ext_resource type="Texture2D" uid="uid://bg6njw1ppn052" path="res://Assets/Tiles/Castle.png" id="3_cib31"]
+[ext_resource type="PackedScene" uid="uid://ihyybdk0m338" path="res://Props/Enemies/spike.tscn" id="4_l8nky"]
+[ext_resource type="PackedScene" uid="uid://kyvgikhsr8bc" path="res://Props/Collectibles/caxote_flutuante.tscn" id="5_yc1v7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y3vf"]
-texture = ExtResource("3_gw6iu")
+texture = ExtResource("3_cib31")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -34,11 +35,8 @@ sources/0 = SubResource("TileSetAtlasSource_1y3vf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y12oe"]
 size = Vector2(144, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vhpy"]
-size = Vector2(16, 16)
-
-[node name="Ground" instance=ExtResource("1_qodya")]
-script = ExtResource("2_rpxfn")
+[node name="Ground" instance=ExtResource("1_2i4hh")]
+script = ExtResource("2_ilaip")
 
 [node name="Tile" parent="." index="0"]
 tile_set = SubResource("TileSet_fb3f2")
@@ -61,20 +59,12 @@ one_way_collision = true
 visible = false
 collision_layer = 2
 
-[node name="Collision" parent="Area_1" index="0"]
-visible = false
-position = Vector2(40, -24)
-shape = SubResource("RectangleShape2D_4vhpy")
-
 [node name="Area_2" parent="." index="4"]
 visible = false
 collision_layer = 2
 
-[node name="Spike_03" parent="." index="5" instance=ExtResource("4_7hwln")]
-position = Vector2(40, -16)
-
-[node name="Spike_06" parent="." index="6" instance=ExtResource("4_7hwln")]
+[node name="Spike_03" parent="." index="5" instance=ExtResource("4_l8nky")]
 position = Vector2(72, -16)
 
-[node name="Spike_07" parent="." index="7" instance=ExtResource("4_7hwln")]
-position = Vector2(104, -16)
+[node name="Caxote" parent="." index="6" instance=ExtResource("5_yc1v7")]
+position = Vector2(72, -32)

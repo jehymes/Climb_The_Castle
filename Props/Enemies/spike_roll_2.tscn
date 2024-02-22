@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=3 uid="uid://dmmbjky7khceb"]
+
+[ext_resource type="PackedScene" uid="uid://baxguwstqwnlu" path="res://Props/Enemies/spike_roll.tscn" id="1_0ophe"]
+[ext_resource type="Texture2D" uid="uid://byvb7w4dinu3r" path="res://Assets/Enemies/Spikes_Roll_2.png" id="2_rit7n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax3hq"]
+atlas = ExtResource("2_rit7n")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2k2n"]
+atlas = ExtResource("2_rit7n")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qxdh"]
+atlas = ExtResource("2_rit7n")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pifbe"]
+atlas = ExtResource("2_rit7n")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc54c"]
+atlas = ExtResource("2_rit7n")
+region = Rect2(128, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7q1fo"]
+atlas = ExtResource("2_rit7n")
+region = Rect2(160, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy7ml"]
+atlas = ExtResource("2_rit7n")
+region = Rect2(192, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtr2q"]
+atlas = ExtResource("2_rit7n")
+region = Rect2(224, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2u53"]
+atlas = ExtResource("2_rit7n")
+region = Rect2(256, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwbwd"]
+atlas = ExtResource("2_rit7n")
+region = Rect2(288, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hciub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax3hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2k2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qxdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pifbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wc54c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7q1fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy7ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtr2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2u53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwbwd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Spike_Roll" instance=ExtResource("1_0ophe")]
+sprite_frames = SubResource("SpriteFrames_hciub")
