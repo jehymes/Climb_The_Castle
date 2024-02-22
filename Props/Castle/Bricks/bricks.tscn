@@ -92,9 +92,5 @@ rotation = 0.785398
 gizmo_extents = 15.0
 
 [node name="Area_1" parent="." index="2"]
-visible = false
 collision_layer = 0
 collision_mask = 0
-
-[node name="Area_2" parent="." index="3"]
-visible = false

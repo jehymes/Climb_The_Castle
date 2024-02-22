@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpt104ofa8yfc"]
+[gd_scene load_steps=9 format=3 uid="uid://bpt104ofa8yfc"]
 
 [ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/tile_model.tscn" id="1_arivh"]
 [ext_resource type="Script" path="res://Scripts/Castle/collumns.gd" id="2_s7sfc"]
@@ -31,14 +31,8 @@ texture = ExtResource("3_03t4s")
 [sub_resource type="TileSet" id="TileSet_vv02n"]
 sources/1 = SubResource("TileSetAtlasSource_wd736")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0vq5"]
-size = Vector2(15, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uufuy"]
-size = Vector2(15, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5n4pk"]
-size = Vector2(1, 16)
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21683"]
 size = Vector2(1, 16)
@@ -60,28 +54,15 @@ gizmo_extents = 55.0
 position = Vector2(168, 0)
 scale = Vector2(-1, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
-collision_layer = 2
-collision_mask = 17
-
-[node name="Coll_1" type="CollisionShape2D" parent="StaticBody2D" index="0"]
-position = Vector2(7.5, -8)
-shape = SubResource("RectangleShape2D_o0vq5")
-
-[node name="Coll_2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
-visible = false
-position = Vector2(168.5, -8)
-shape = SubResource("RectangleShape2D_uufuy")
-
-[node name="Area_1" parent="." index="4"]
+[node name="Area_1" parent="." index="3"]
 collision_layer = 2
 collision_mask = 17
 
 [node name="Collision" parent="Area_1" index="0"]
-position = Vector2(15.5, -8)
+position = Vector2(8, -8)
 shape = SubResource("RectangleShape2D_5n4pk")
 
-[node name="Area_2" parent="." index="5"]
+[node name="Area_2" parent="." index="4"]
 visible = false
 collision_layer = 2
 collision_mask = 17

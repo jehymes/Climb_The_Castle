@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://rq72cn7rlxc"]
+[gd_scene load_steps=8 format=3 uid="uid://rq72cn7rlxc"]
 
 [ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/tile_model.tscn" id="1_67353"]
 [ext_resource type="Script" path="res://Scripts/Castle/collumns.gd" id="2_3qll1"]
@@ -30,17 +30,11 @@ texture = ExtResource("3_mx403")
 [sub_resource type="TileSet" id="TileSet_vv02n"]
 sources/1 = SubResource("TileSetAtlasSource_wd736")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0vq5"]
-size = Vector2(15, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uufuy"]
-size = Vector2(15, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5n4pk"]
-size = Vector2(1, 16)
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21683"]
-size = Vector2(1, 16)
+size = Vector2(16, 16)
 
 [node name="Collumns" instance=ExtResource("1_67353")]
 z_index = -1
@@ -55,32 +49,22 @@ position = Vector2(0, -16)
 rotation = 0.785398
 gizmo_extents = 55.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
-collision_layer = 2
-collision_mask = 17
-
-[node name="Coll_1" type="CollisionShape2D" parent="StaticBody2D" index="0"]
-position = Vector2(7.5, -8)
-shape = SubResource("RectangleShape2D_o0vq5")
-
-[node name="Coll_2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
-position = Vector2(168.5, -8)
-shape = SubResource("RectangleShape2D_uufuy")
-
-[node name="Area_1" parent="." index="3"]
+[node name="Area_1" parent="." index="2"]
+visible = false
 collision_layer = 2
 collision_mask = 17
 
 [node name="Collision" parent="Area_1" index="0"]
-position = Vector2(15.5, -8)
+position = Vector2(8, -8)
 shape = SubResource("RectangleShape2D_5n4pk")
 
-[node name="Area_2" parent="." index="4"]
+[node name="Area_2" parent="." index="3"]
+visible = false
 collision_layer = 2
 collision_mask = 17
 
 [node name="Collision" parent="Area_2" index="0"]
-position = Vector2(160.5, -8)
+position = Vector2(168, -8)
 shape = SubResource("RectangleShape2D_21683")
 
 [connection signal="body_entered" from="Area_1" to="." method="on_area_body_entered"]

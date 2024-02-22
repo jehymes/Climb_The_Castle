@@ -1,85 +1,95 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmmbjky7khceb"]
+[gd_scene load_steps=14 format=3 uid="uid://cp2oawk6pe21s"]
 
-[ext_resource type="PackedScene" uid="uid://baxguwstqwnlu" path="res://Props/Enemies/spike_roll.tscn" id="1_0ophe"]
-[ext_resource type="Texture2D" uid="uid://byvb7w4dinu3r" path="res://Assets/Enemies/Spikes_Roll_2.png" id="2_rit7n"]
+[ext_resource type="Texture2D" uid="uid://byvb7w4dinu3r" path="res://Assets/Enemies/Spikes_Roll_2.png" id="1_2pdmp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ax3hq"]
-atlas = ExtResource("2_rit7n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_gagu1"]
+atlas = ExtResource("1_2pdmp")
 region = Rect2(0, 0, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i2k2n"]
-atlas = ExtResource("2_rit7n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7jpn"]
+atlas = ExtResource("1_2pdmp")
 region = Rect2(32, 0, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0qxdh"]
-atlas = ExtResource("2_rit7n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5yef"]
+atlas = ExtResource("1_2pdmp")
 region = Rect2(64, 0, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pifbe"]
-atlas = ExtResource("2_rit7n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8xac"]
+atlas = ExtResource("1_2pdmp")
 region = Rect2(96, 0, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wc54c"]
-atlas = ExtResource("2_rit7n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw8c8"]
+atlas = ExtResource("1_2pdmp")
 region = Rect2(128, 0, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7q1fo"]
-atlas = ExtResource("2_rit7n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2ejj"]
+atlas = ExtResource("1_2pdmp")
 region = Rect2(160, 0, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dy7ml"]
-atlas = ExtResource("2_rit7n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsld8"]
+atlas = ExtResource("1_2pdmp")
 region = Rect2(192, 0, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vtr2q"]
-atlas = ExtResource("2_rit7n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_epmmj"]
+atlas = ExtResource("1_2pdmp")
 region = Rect2(224, 0, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h2u53"]
-atlas = ExtResource("2_rit7n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0osrf"]
+atlas = ExtResource("1_2pdmp")
 region = Rect2(256, 0, 32, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dwbwd"]
-atlas = ExtResource("2_rit7n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5ud2"]
+atlas = ExtResource("1_2pdmp")
 region = Rect2(288, 0, 32, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hciub"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_51gqv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ax3hq")
+"texture": SubResource("AtlasTexture_gagu1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i2k2n")
+"texture": SubResource("AtlasTexture_j7jpn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0qxdh")
+"texture": SubResource("AtlasTexture_q5yef")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pifbe")
+"texture": SubResource("AtlasTexture_j8xac")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wc54c")
+"texture": SubResource("AtlasTexture_uw8c8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7q1fo")
+"texture": SubResource("AtlasTexture_h2ejj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dy7ml")
+"texture": SubResource("AtlasTexture_hsld8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vtr2q")
+"texture": SubResource("AtlasTexture_epmmj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h2u53")
+"texture": SubResource("AtlasTexture_0osrf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dwbwd")
+"texture": SubResource("AtlasTexture_f5ud2")
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 5.0
 }]
 
-[node name="Spike_Roll" instance=ExtResource("1_0ophe")]
-sprite_frames = SubResource("SpriteFrames_hciub")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kijd5"]
+size = Vector2(32, 8)
+
+[node name="Spike_Roll" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_51gqv")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="." groups=["spikes"]]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_kijd5")

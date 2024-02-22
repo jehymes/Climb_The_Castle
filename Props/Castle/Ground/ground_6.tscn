@@ -46,7 +46,7 @@ script = ExtResource("2_vf2ox")
 
 [node name="Tile" parent="." index="0"]
 tile_set = SubResource("TileSet_fb3f2")
-layer_0/tile_data = PackedInt32Array(-65536, 196608, 0, -65535, 196608, 0, -65534, 196608, 0, -65533, 327680, 1, -65532, 196608, 0, -65531, 327680, 1, -65530, 196608, 0, -65529, 196608, 0, -65528, 196608, 0)
+layer_0/tile_data = PackedInt32Array(-65536, 196608, 0, -65535, 196608, 0, -65534, 327680, 1, -65533, 196608, 0, -65532, 327680, 1, -65531, 196608, 0, -65530, 327680, 1, -65529, 196608, 0, -65528, 196608, 0)
 
 [node name="Exit" parent="." index="1"]
 position = Vector2(0, -64)
@@ -75,18 +75,27 @@ visible = false
 collision_layer = 2
 
 [node name="Elevation1" parent="." index="5" instance=ExtResource("4_jivh6")]
-position = Vector2(48, -16)
+position = Vector2(64, -16)
 
 [node name="Elevation2" parent="." index="6" instance=ExtResource("4_jivh6")]
-position = Vector2(80, -16)
+position = Vector2(96, -16)
 
-[node name="Lava" parent="." index="7" instance=ExtResource("5_dk72n")]
-position = Vector2(72, -24)
+[node name="Elevation3" parent="." index="7" instance=ExtResource("4_jivh6")]
+position = Vector2(32, -16)
 
-[node name="Coins" type="Node2D" parent="." index="8"]
+[node name="Lava1" parent="." index="8" instance=ExtResource("5_dk72n")]
+position = Vector2(88, -24)
+
+[node name="Lava2" parent="." index="9" instance=ExtResource("5_dk72n")]
+position = Vector2(56, -24)
+
+[node name="Coins" type="Node2D" parent="." index="10"]
 
 [node name="Coin1" parent="Coins" index="0" instance=ExtResource("6_6li1b")]
-position = Vector2(56, -40)
+position = Vector2(72, -40)
 
 [node name="Coin2" parent="Coins" index="1" instance=ExtResource("6_6li1b")]
-position = Vector2(88, -40)
+position = Vector2(104, -40)
+
+[node name="Coin3" parent="Coins" index="2" instance=ExtResource("6_6li1b")]
+position = Vector2(40, -40)

@@ -8,9 +8,11 @@ format = 2
 [node name="Exit" type="Marker2D" parent="."]
 
 [node name="Area_1" type="Area2D" parent="."]
+visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="Area_1"]
 
 [node name="Area_2" type="Area2D" parent="."]
+visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="Area_2"]

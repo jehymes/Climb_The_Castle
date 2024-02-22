@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0r57gkvk3xcf"]
+
+[ext_resource type="PackedScene" uid="uid://rq72cn7rlxc" path="res://Props/Castle/Collumns/collumns_1.tscn" id="1_e24s8"]
+[ext_resource type="PackedScene" uid="uid://3t455e376lxe" path="res://Props/Stats/stats.tscn" id="2_4cuuf"]
+[ext_resource type="PackedScene" uid="uid://btjxyuxtje58b" path="res://Props/Player/anny.tscn" id="3_b2sn3"]
+
+[node name="Test" type="Node2D"]
+metadata/_edit_vertical_guides_ = [40.0, 40.0, 40.0, 184.0]
+
+[node name="Castle" type="Node2D" parent="."]
+
+[node name="Colunas" type="Node2D" parent="Castle"]
+
+[node name="Collumns1" parent="Castle/Colunas" instance=ExtResource("1_e24s8")]
+position = Vector2(24, 224)
+
+[node name="Collumns2" parent="Castle/Colunas" instance=ExtResource("1_e24s8")]
+position = Vector2(24, 208)
+
+[node name="Collumns3" parent="Castle/Colunas" instance=ExtResource("1_e24s8")]
+position = Vector2(24, 192)
+
+[node name="Collumns4" parent="Castle/Colunas" instance=ExtResource("1_e24s8")]
+position = Vector2(24, 176)
+
+[node name="Stats" type="Node2D" parent="."]
+
+[node name="Stats" parent="Stats" instance=ExtResource("2_4cuuf")]
+position = Vector2(0, 256)
+
+[node name="Anny" parent="." instance=ExtResource("3_b2sn3")]
+position = Vector2(179, 224)
+scale = Vector2(-1, 1)

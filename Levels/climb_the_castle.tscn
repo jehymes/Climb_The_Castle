@@ -31,6 +31,7 @@ rotation = 0.785398
 gizmo_extents = 15.0
 
 [node name="Start_Ladder" type="Marker2D" parent="."]
+visible = false
 position = Vector2(40, 224)
 rotation = 0.785398
 gizmo_extents = 15.0

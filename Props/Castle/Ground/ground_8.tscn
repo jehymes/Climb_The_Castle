@@ -84,9 +84,9 @@ position = Vector2(80, -16)
 position = Vector2(72, -24)
 
 [node name="Lava1" parent="Lava" index="0" instance=ExtResource("5_eek2q")]
-position = Vector2(-16, 0)
 
 [node name="Lava2" parent="Lava" index="1" instance=ExtResource("5_eek2q")]
+position = Vector2(-16, 0)
 
 [node name="Coins" type="Node2D" parent="." index="8"]
 

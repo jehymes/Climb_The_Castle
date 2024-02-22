@@ -44,7 +44,7 @@ func generate_block_collumns() -> void:
 		g.pos_drag = 0
 
 func on_area_body_entered(body):	
-	if body.is_in_group("player"):
+	if body.is_in_group("player"):		
 		body.invert_position_movement()
 
 func on_area_entered(area):

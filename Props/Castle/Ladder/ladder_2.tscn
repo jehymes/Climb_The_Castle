@@ -29,14 +29,12 @@ rotation = 0.785398
 gizmo_extents = 15.0
 
 [node name="Area_1" parent="." index="2"]
+visible = true
 collision_layer = 2
 
 [node name="Collision" parent="Area_1" index="0"]
 position = Vector2(4, -47)
 shape = SubResource("RectangleShape2D_n35na")
-
-[node name="Area_2" parent="." index="3"]
-visible = false
 
 [connection signal="body_entered" from="Area_1" to="." method="on_area_body_entered"]
 [connection signal="body_exited" from="Area_1" to="." method="on_area_body_exited"]

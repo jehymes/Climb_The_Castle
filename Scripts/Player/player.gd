@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 @onready var sprite: Sprite2D = get_node("Sprite")
 @onready var animation: AnimationPlayer = get_node("Animation")
-var is_dead: bool = false
 
+var limit_dir = 179
+var limit_esq = 46
+var is_dead: bool = false
 var jump_count: int = 0
 
 func _physics_process(delta):
@@ -21,6 +23,14 @@ func move_player() -> void:
 	if !g.on_ladder:
 		animation.play("Walk")
 		move_and_collide(Vector2(g.movement_speed, 0))
+		
+		if position.x >= limit_dir:
+			invert_position_movement()
+			return
+		
+		if position.x <= limit_esq:
+			invert_position_movement()
+			return
 	
 		if is_on_floor():		
 			jump_count = 0
@@ -41,10 +51,10 @@ func move_player() -> void:
 func invert_position_movement() -> void:
 	if sprite.flip_h:
 		sprite.flip_h =  false
+		g.movement_speed = g.movement_speed * -1
 	else:
 		sprite.flip_h = true
-	
-	g.movement_speed = g.movement_speed * -1
+		g.movement_speed = g.movement_speed * -1	
 	return
 
 func on_hit_box_area_entered(area):	
