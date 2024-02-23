@@ -11,7 +11,10 @@ config_version=5
 [application]
 
 config/name="Climb_The_Castle"
+run/main_scene="res://Levels/climb_the_castle.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://Anny.png"
+config/windows_native_icon="res://Anny.ico"
 
 [autoload]
 
@@ -47,3 +50,4 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
