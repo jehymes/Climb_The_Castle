@@ -49,6 +49,7 @@ tile_set = SubResource("TileSet_kgmjp")
 layer_0/tile_data = PackedInt32Array(-65536, 327680, 0)
 
 [node name="Area_1" parent="." index="2"]
+visible = true
 collision_layer = 2
 
 [node name="Collision" parent="Area_1" index="0"]
@@ -56,6 +57,7 @@ position = Vector2(4, -6.5)
 shape = SubResource("RectangleShape2D_uj4xb")
 
 [node name="Area_2" parent="." index="3"]
+visible = true
 collision_layer = 2
 
 [node name="Collision" parent="Area_2" index="0"]

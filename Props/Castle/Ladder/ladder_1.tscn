@@ -33,7 +33,7 @@ visible = true
 collision_layer = 2
 
 [node name="Collision" parent="Area_1" index="0"]
-position = Vector2(4, -32)
+position = Vector2(5, -32)
 shape = SubResource("RectangleShape2D_n35na")
 
 [node name="Area_2" parent="." index="3"]

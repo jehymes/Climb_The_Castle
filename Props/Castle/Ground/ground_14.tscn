@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://by7gamvuumth7"]
+[gd_scene load_steps=12 format=3 uid="uid://by7gamvuumth7"]
 
 [ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/Models/tile_model.tscn" id="1_lrm5g"]
 [ext_resource type="Script" path="res://Scripts/Castle/ground.gd" id="2_dm2fe"]
@@ -40,6 +40,12 @@ sources/0 = SubResource("TileSetAtlasSource_1y3vf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y12oe"]
 size = Vector2(144, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uerj4"]
+size = Vector2(16, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsuga"]
+size = Vector2(16, 13)
+
 [node name="Ground" instance=ExtResource("1_lrm5g")]
 script = ExtResource("2_dm2fe")
 
@@ -61,12 +67,20 @@ shape = SubResource("RectangleShape2D_y12oe")
 one_way_collision = true
 
 [node name="Area_1" parent="." index="3"]
-visible = false
+visible = true
 collision_layer = 2
 
+[node name="Collision" parent="Area_1" index="0"]
+position = Vector2(48, -22.5)
+shape = SubResource("RectangleShape2D_uerj4")
+
 [node name="Area_2" parent="." index="4"]
-visible = false
+visible = true
 collision_layer = 2
+
+[node name="Collision" parent="Area_2" index="0"]
+position = Vector2(96, -22.5)
+shape = SubResource("RectangleShape2D_xsuga")
 
 [node name="Coins" type="Node2D" parent="." index="5"]
 position = Vector2(40, 0)

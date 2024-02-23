@@ -22,7 +22,6 @@ var total_bricks = total_levels * blocks_brick_for_level
 
 #Total Generate Ladder
 var total_ladder = total_levels - 1
-var is_left: bool = false
 
 #Total Generate Ground
 var total_ground = total_levels
@@ -36,8 +35,6 @@ var on_ladder: bool = false
 
 #Dragon
 var pos_drag = 0
-var index = 0
-var dragon_pos_array: Array
 
 #Shoot
 var on_shoot: bool = false

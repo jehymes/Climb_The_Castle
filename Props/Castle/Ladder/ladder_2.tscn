@@ -33,7 +33,7 @@ visible = true
 collision_layer = 2
 
 [node name="Collision" parent="Area_1" index="0"]
-position = Vector2(4, -47)
+position = Vector2(5, -47)
 shape = SubResource("RectangleShape2D_n35na")
 
 [connection signal="body_entered" from="Area_1" to="." method="on_area_body_entered"]

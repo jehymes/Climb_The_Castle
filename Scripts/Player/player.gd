@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = get_node("Sprite")
 @onready var animation: AnimationPlayer = get_node("Animation")
 
+var climb_in_left:bool = true
 var limit_dir = 179
 var limit_esq = 46
 var is_dead: bool = false
@@ -48,6 +49,7 @@ func move_player() -> void:
 		velocity.y += -g.climb_ladder
 		
 	move_and_slide()
+
 
 func invert_position_movement() -> void:
 	if sprite.flip_h:
