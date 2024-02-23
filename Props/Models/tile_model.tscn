@@ -16,3 +16,8 @@ visible = false
 visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="Area_2"]
+
+[node name="Enemie_Spawn" type="Marker2D" parent="."]
+position = Vector2(28, -16)
+rotation = 0.785398
+gizmo_extents = 15.0

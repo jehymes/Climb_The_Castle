@@ -12,6 +12,7 @@ func generate_ladder() -> void:
 		var new_ladder = load("res://Props/Castle/Ladder/ladder_"+str(id)+".tscn").instantiate()
 		new_ladder.position = $Exit.position
 		new_ladder.scale.x *= -1
+		
 		add_child(new_ladder)
 		g.total_ladder += -1
 

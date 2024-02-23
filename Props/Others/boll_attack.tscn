@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm4dkci6c4duh"]
+[gd_scene load_steps=8 format=3 uid="uid://bm4dkci6c4duh"]
 
 [ext_resource type="Script" path="res://Scripts/Others/Boll_Attack.gd" id="1_r37k4"]
 [ext_resource type="Texture2D" uid="uid://bi7p54usvnbjf" path="res://Assets/Enemies/Boll_Attack.png" id="2_o0g3d"]
+[ext_resource type="AudioStream" uid="uid://t8x37bq20ouk" path="res://Sounds/exp.wav" id="3_to604"]
 
 [sub_resource type="Animation" id="Animation_1vjyw"]
 length = 0.001
@@ -136,3 +137,7 @@ autoplay = "Shot"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e73gk")
+
+[node name="SoundFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_to604")
+volume_db = -20.0

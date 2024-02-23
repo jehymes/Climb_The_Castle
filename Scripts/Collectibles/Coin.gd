@@ -5,6 +5,7 @@ var anim_finished: bool = false
 
 func on_area_body_entered(body):
 	if body.is_in_group("player"):
+		$Collect.play()
 		anim.play("Collect")
 		if anim_finished:
 			self.queue_free()

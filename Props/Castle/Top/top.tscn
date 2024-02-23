@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cckbkf61jhula"]
 
-[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/tile_model.tscn" id="1_jln8y"]
+[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/Models/tile_model.tscn" id="1_jln8y"]
 [ext_resource type="Texture2D" uid="uid://bg6njw1ppn052" path="res://Assets/Tiles/Castle.png" id="2_sem5g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7hkl"]

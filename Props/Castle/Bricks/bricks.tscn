@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://8lxth0nq6o8v"]
 
-[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/tile_model.tscn" id="1_ra8bo"]
+[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/Models/tile_model.tscn" id="1_ra8bo"]
 [ext_resource type="Script" path="res://Scripts/Castle/bricks.gd" id="2_itrng"]
 [ext_resource type="Texture2D" uid="uid://bg6njw1ppn052" path="res://Assets/Tiles/Castle.png" id="2_stq1u"]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://btjxyuxtje58b"]
+[gd_scene load_steps=13 format=3 uid="uid://btjxyuxtje58b"]
 
-[ext_resource type="PackedScene" uid="uid://dlr725sgsmmnb" path="res://Props/player_model.tscn" id="1_fqgri"]
+[ext_resource type="PackedScene" uid="uid://dlr725sgsmmnb" path="res://Props/Models/player_model.tscn" id="1_313oc"]
 [ext_resource type="Texture2D" uid="uid://dnh7mb0ntv4g5" path="res://Assets/Players/Anny_Run.png" id="2_c1aau"]
 [ext_resource type="Texture2D" uid="uid://rym6btfkal8i" path="res://Assets/Players/Anny_Climb.png" id="3_okl3e"]
 [ext_resource type="Texture2D" uid="uid://dp7lofu8t7eeb" path="res://Assets/Players/Anny_Death.png" id="4_b1gfh"]
+[ext_resource type="AudioStream" uid="uid://crfv83lt2nkvq" path="res://Sounds/jump.wav" id="5_efaby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ol72t"]
 size = Vector2(9, 10)
@@ -228,7 +229,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2qhp"]
 size = Vector2(9, 10)
 
-[node name="Anny" instance=ExtResource("1_fqgri")]
+[node name="Anny" instance=ExtResource("1_313oc")]
 z_index = 1
 collision_mask = 30
 
@@ -260,6 +261,10 @@ collision_mask = 24
 [node name="Collision" type="CollisionShape2D" parent="HitBox" index="0"]
 position = Vector2(-0.5, -5)
 shape = SubResource("RectangleShape2D_e2qhp")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("5_efaby")
+volume_db = -15.0
 
 [connection signal="animation_finished" from="Animation" to="." method="on_animation_animation_finished"]
 [connection signal="area_entered" from="HitBox" to="." method="on_hit_box_area_entered"]

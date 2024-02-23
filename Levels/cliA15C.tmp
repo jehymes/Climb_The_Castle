@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjm4yw2dd8pmh"]
+
+[ext_resource type="Script" path="res://Scripts/climb_the_castle.gd" id="1_jdhxl"]
+
+[node name="Climb_The_Castle" type="Node2D"]
+script = ExtResource("1_jdhxl")
+
+[node name="Start_Grass_Out_Castle" type="Marker2D" parent="."]
+position = Vector2(0, 256)
+rotation = 0.785398
+gizmo_extents = 15.0
+
+[node name="Start_Door" type="Marker2D" parent="."]
+position = Vector2(144, 224)
+rotation = 0.785398
+gizmo_extents = 15.0
+
+[node name="Start_Collumns" type="Marker2D" parent="."]
+position = Vector2(24, 224)
+rotation = 0.785398
+gizmo_extents = 15.0
+
+[node name="Start_Bricks" type="Marker2D" parent="."]
+position = Vector2(40, 224)
+rotation = 0.785398
+gizmo_extents = 15.0
+
+[node name="Start_Ground" type="Marker2D" parent="."]
+position = Vector2(40, 176)
+rotation = 0.785398
+gizmo_extents = 15.0
+
+[node name="Start_Ladder" type="Marker2D" parent="."]
+visible = false
+position = Vector2(40, 224)
+rotation = 0.785398
+gizmo_extents = 15.0
+
+[node name="Start_Player" type="Marker2D" parent="."]
+position = Vector2(160, 224)
+rotation = 0.785398

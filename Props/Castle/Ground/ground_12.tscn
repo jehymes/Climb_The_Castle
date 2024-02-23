@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://nb16mnk4tyku"]
 
-[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/tile_model.tscn" id="1_wh0yh"]
+[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/Models/tile_model.tscn" id="1_wh0yh"]
 [ext_resource type="Script" path="res://Scripts/Castle/ground.gd" id="2_5fbmg"]
 [ext_resource type="Texture2D" uid="uid://bg6njw1ppn052" path="res://Assets/Tiles/Castle.png" id="3_exrna"]
 [ext_resource type="PackedScene" uid="uid://c4nxbcqkekdpw" path="res://Props/Collectibles/Coin.tscn" id="4_udgju"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://eb1crufreucp"]
+[gd_scene load_steps=6 format=3 uid="uid://eb1crufreucp"]
 
 [ext_resource type="Script" path="res://Scripts/Others/Caxote.gd" id="1_px16t"]
 [ext_resource type="Texture2D" uid="uid://cdmg8h7it6xb4" path="res://Assets/Collectibles/Caixote.png" id="2_xagit"]
+[ext_resource type="AudioStream" uid="uid://jtl0liei8n2m" path="res://Sounds/drag.wav" id="3_qr4rs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rq0bs"]
 size = Vector2(16, 2)
@@ -12,6 +13,12 @@ size = Vector2(16, 13)
 [node name="Caxote" type="Node2D"]
 z_index = -1
 script = ExtResource("1_px16t")
+
+[node name="SoundFX" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -8)
+stream = ExtResource("3_qr4rs")
+volume_db = -15.0
+attenuation = 3.0
 
 [node name="Caixote" type="Sprite2D" parent="."]
 position = Vector2(0, -8)

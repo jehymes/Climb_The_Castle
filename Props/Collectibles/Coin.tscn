@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4nxbcqkekdpw"]
+[gd_scene load_steps=10 format=3 uid="uid://c4nxbcqkekdpw"]
 
 [ext_resource type="Script" path="res://Scripts/Collectibles/Coin.gd" id="1_0ppgj"]
 [ext_resource type="Texture2D" uid="uid://cksorcj520i8h" path="res://Assets/Collectibles/Coin.png" id="1_h6ja8"]
 [ext_resource type="Texture2D" uid="uid://b4vuabynnj4m1" path="res://Assets/Collectibles/Coin_Collect.png" id="2_8vssg"]
+[ext_resource type="AudioStream" uid="uid://cw8k1s6h16yls" path="res://Sounds/pick_coin.wav" id="4_wtky2"]
 
 [sub_resource type="Animation" id="Animation_g3ymm"]
 resource_name = "Collect"
@@ -190,6 +191,10 @@ collision_layer = 4
 
 [node name="Collision" type="CollisionShape2D" parent="Area"]
 shape = SubResource("CapsuleShape2D_csgpe")
+
+[node name="Collect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wtky2")
+volume_db = -15.0
 
 [connection signal="animation_finished" from="Animation" to="." method="on_animation_animation_finished"]
 [connection signal="body_entered" from="Area" to="." method="on_area_body_entered"]

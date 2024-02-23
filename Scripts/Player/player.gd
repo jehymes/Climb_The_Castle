@@ -38,6 +38,7 @@ func move_player() -> void:
 		if Input.is_action_just_pressed("jump") and jump_count < 1:
 			velocity.y += -g.jump_force
 			jump_count += 1
+			$Jump.play()
 			
 	move_and_slide()
 	
@@ -61,13 +62,16 @@ func on_hit_box_area_entered(area):
 	animation.stop(true)
 	if area.is_in_group("shoot"):
 		is_dead = true
-		velocity = Vector2.ZERO
+		animation.play("Death")
+		area.queue_free()
+	
+	if area.is_in_group("goomy"):
+		is_dead = true
 		animation.play("Death")
 		area.queue_free()
 	
 	if area.is_in_group("spikes"):
 		is_dead = true
-		velocity = Vector2.ZERO
 		animation.play("Death")
 
 func on_animation_animation_finished(anim_name):	

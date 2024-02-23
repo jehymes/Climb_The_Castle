@@ -9,7 +9,7 @@ var bricks = preload("res://Props/Castle/Bricks/bricks.tscn").instantiate()
 var ground = preload("res://Props/Castle/Ground/ground_1.tscn").instantiate()
 var ladder = preload("res://Props/Castle/Ladder/ladder_1.tscn").instantiate()
 var player = preload("res://Props/Player/anny.tscn").instantiate()
-var hud = preload("res://Props/hud.tscn").instantiate()
+var hud = preload("res://Props/Level/hud.tscn").instantiate()
 
 func _ready() -> void:
 	#HUD

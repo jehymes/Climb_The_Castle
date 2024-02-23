@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://nbs1qixkmloa"]
 
-[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/tile_model.tscn" id="1_158cb"]
+[ext_resource type="PackedScene" uid="uid://dg4fuq7cqf3xt" path="res://Props/Models/tile_model.tscn" id="1_2pagy"]
 [ext_resource type="Script" path="res://Scripts/Castle/ground.gd" id="2_bmo4j"]
 [ext_resource type="Texture2D" uid="uid://bg6njw1ppn052" path="res://Assets/Tiles/Castle.png" id="3_42sh3"]
 
@@ -33,7 +33,7 @@ sources/0 = SubResource("TileSetAtlasSource_1y3vf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y12oe"]
 size = Vector2(144, 16)
 
-[node name="Ground" instance=ExtResource("1_158cb")]
+[node name="Ground" instance=ExtResource("1_2pagy")]
 script = ExtResource("2_bmo4j")
 
 [node name="Tile" parent="." index="0"]
@@ -54,9 +54,7 @@ shape = SubResource("RectangleShape2D_y12oe")
 one_way_collision = true
 
 [node name="Area_1" parent="." index="3"]
-visible = false
 collision_layer = 2
 
 [node name="Area_2" parent="." index="4"]
-visible = false
 collision_layer = 2

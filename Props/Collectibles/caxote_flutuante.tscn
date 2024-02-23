@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://kyvgikhsr8bc"]
+[gd_scene load_steps=5 format=3 uid="uid://kyvgikhsr8bc"]
 
 [ext_resource type="Script" path="res://Scripts/Others/Caxote.gd" id="1_fdmpy"]
+[ext_resource type="AudioStream" uid="uid://jtl0liei8n2m" path="res://Sounds/drag.wav" id="2_80uvw"]
 [ext_resource type="Texture2D" uid="uid://cdmg8h7it6xb4" path="res://Assets/Collectibles/Caixote.png" id="2_ywc2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sii3d"]
@@ -9,6 +10,12 @@ size = Vector2(16, 15)
 [node name="Caxote" type="Node2D"]
 z_index = -1
 script = ExtResource("1_fdmpy")
+
+[node name="SoundFX" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -8)
+stream = ExtResource("2_80uvw")
+volume_db = -15.0
+attenuation = 3.0
 
 [node name="Caixote" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
@@ -21,4 +28,5 @@ collision_layer = 2
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_sii3d")
 
+[connection signal="finished" from="SoundFX" to="." method="on_sound_fx_finished"]
 [connection signal="body_entered" from="Caixote/Area2D" to="." method="on_area_2d_body_entered"]
