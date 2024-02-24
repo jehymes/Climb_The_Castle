@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjm4yw2dd8pmh"]
+[gd_scene load_steps=3 format=3 uid="uid://bjm4yw2dd8pmh"]
 
 [ext_resource type="Script" path="res://Scripts/climb_the_castle.gd" id="1_jdhxl"]
+[ext_resource type="PackedScene" uid="uid://crboy7ur3n4ge" path="res://Props/Som/bg_song.tscn" id="2_skvw4"]
 
 [node name="Climb_The_Castle" type="Node2D"]
 script = ExtResource("1_jdhxl")
@@ -38,3 +39,5 @@ gizmo_extents = 15.0
 [node name="Start_Player" type="Marker2D" parent="."]
 position = Vector2(160, 224)
 rotation = 0.785398
+
+[node name="bg_song" parent="." instance=ExtResource("2_skvw4")]
