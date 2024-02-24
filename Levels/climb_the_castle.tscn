@@ -32,7 +32,7 @@ rotation = 0.785398
 gizmo_extents = 15.0
 
 [node name="Start_Ladder" type="Marker2D" parent="."]
-position = Vector2(40, 224)
+position = Vector2(44, 224)
 rotation = 0.785398
 gizmo_extents = 15.0
 
@@ -41,3 +41,5 @@ position = Vector2(160, 224)
 rotation = 0.785398
 
 [node name="bg_song" parent="." instance=ExtResource("2_skvw4")]
+
+[connection signal="finished" from="bg_song" to="." method="on_bg_song_finished"]

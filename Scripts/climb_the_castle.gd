@@ -54,3 +54,6 @@ func set_position_obj(obj: Node2D, pos: Vector2) -> void:
 func check_point() -> void:
 	if g.score_in_game > g.SCORE:
 		g.SCORE = g.score_in_game
+
+func on_bg_song_finished():
+	$bg_song.play(23.93)
