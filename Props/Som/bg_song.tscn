@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://crboy7ur3n4ge"]
+
+[ext_resource type="AudioStream" uid="uid://bvxjfr4a3ewxr" path="res://Sounds/music.wav" id="1_ad51l"]
+
+[node name="bg_song" type="AudioStreamPlayer"]
+stream = ExtResource("1_ad51l")
+volume_db = -25.752
+autoplay = true
